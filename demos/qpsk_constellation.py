@@ -1,11 +1,8 @@
-"""QPSK signal generation demo.
-
-Generate a single-polarization QPSK signal at 64 GBd with 2**18 samples
-using the QAMpy submodule and plot the resulting constellation.
-
-Run this file directly with Python to display the plot:
-
-    python demos/qpsk_constellation.py
+"""@file qpsk_constellation.py
+@brief Generate and plot a QPSK constellation.
+@details Creates a single-polarization QPSK signal at 64 GBd with 2**18 samples
+using QAMpy and displays its constellation diagram.
+Run with `python demos/qpsk_constellation.py`.
 """
 
 import os
