@@ -45,6 +45,7 @@ python demos/<demo_script>.py
 # Example
 python demos/qpsk_constellation.py
 python demos/qpsk_constellation_awgn.py
+python demos/qpsk_ber_snr_sweep.py
 ```
 
 Run tests with `pytest`:
