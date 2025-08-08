@@ -97,6 +97,7 @@ role definitions in [AGENTS.md](AGENTS.md). Key points:
 ├─ documentation/
 │  ├─ Doxyfile
 │  └─ README.md
+├─ helpers/
 ├─ requirements.txt
 └─ tests/
 ```
@@ -105,6 +106,7 @@ role definitions in [AGENTS.md](AGENTS.md). Key points:
 - `constraints.txt` – pinned versions for dependencies.
 - `demos/` – example scripts and notebooks.
 - `documentation/` – project documentation.
+- `helpers/` – utility functions shared across the project.
 - `requirements.txt` – project dependencies.
 - `tests/` – test suite.
 
