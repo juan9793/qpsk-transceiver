@@ -30,3 +30,4 @@ def test_validate_osr_rejects_bool():
 def test_validate_osr_rejects_non_numeric():
     with pytest.raises(TypeError):
         validate_osr("3")
+
