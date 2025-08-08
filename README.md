@@ -59,13 +59,14 @@ python -m pytest tests
 ## Documentation
 
 Generate API documentation with [Doxygen](https://www.doxygen.nl/). Graphviz is
-required for diagram generation. Doxygen is configured to parse standard Python
-docstrings, so no special comment syntax is needed.
+required for diagram generation. Doxygen parses standard Python docstrings via
+the [`doxypypy`](https://github.com/Feneric/doxypypy) filter, so no special
+comment syntax is needed.
 
 Install the tools:
 
-- **Debian/Ubuntu:** `sudo apt-get install doxygen graphviz`
-- **Windows:** download the installers from the [Doxygen](https://www.doxygen.nl/download.html) and [Graphviz](https://graphviz.org/download/) websites and ensure `doxygen` and `dot` are available in your `PATH`
+- **Debian/Ubuntu:** `sudo apt-get install doxygen graphviz && pip install doxypypy`
+- **Windows:** download the installers from the [Doxygen](https://www.doxygen.nl/download.html) and [Graphviz](https://graphviz.org/download/) websites and run `pip install doxypypy` so `doxygen`, `dot`, and `doxypypy` are available in your `PATH`
 
 Then build the docs:
 

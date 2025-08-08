@@ -23,6 +23,11 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Install Doxygen
         run: sudo apt-get update && sudo apt-get install -y doxygen graphviz
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Install doc dependencies
+        run: pip install doxypypy
       - name: Build documentation
         run: |
           cd documentation

@@ -29,7 +29,7 @@ This document defines the roles, responsibilities, and workflows for human and A
  - Keep the README's directory structure current whenever files or directories are added or removed.
  - Update usage instructions for VS Code terminal and Jupyter.
  - Generate diagrams for the signal chain and workflows.
- - Ensure documentation uses standard Python docstrings; Doxygen parses docstrings to build the API reference.
+ - Ensure documentation uses standard Python docstrings; Doxygen builds the API reference via the `doxypypy` filter.
 
 ### 6. Release Agent
 - Manage versioning and changelogs.
