@@ -29,7 +29,7 @@ This document defines the roles, responsibilities, and workflows for human and A
  - Keep the README's directory structure current whenever files or directories are added or removed.
  - Update usage instructions for VS Code terminal and Jupyter.
  - Generate diagrams for the signal chain and workflows.
- - Ensure documentation uses standard Python docstrings; Doxygen builds the API reference via the `doxypypy` filter.
+ - Ensure documentation uses standard Python docstrings; Doxygen builds the API reference without extra filters.
 
 ### 6. Release Agent
 - Manage versioning and changelogs.
@@ -78,6 +78,7 @@ References to QAMpy refer to the submodule located at `/base/QAMpy`; do not atte
 - Avoid glue code; it is never recommended.
 - Follow "Divide and conquer"—each function should implement a single, well-defined functionality with optional configuration.
 - Tests must pass before merge.
+- Avoid adding new dependencies unless absolutely necessary; prefer using the existing requirements.
 
 ## Artifacts & Storage
 - Performance plots (BER, constellation diagrams, equalizer learning curves, BPS phase plots) may be generated locally but must not be committed to the repository.

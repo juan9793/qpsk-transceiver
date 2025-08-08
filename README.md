@@ -59,14 +59,13 @@ python -m pytest tests
 ## Documentation
 
 Generate API documentation with [Doxygen](https://www.doxygen.nl/). Graphviz is
-required for diagram generation. Doxygen parses standard Python docstrings via
-the [`doxypypy`](https://github.com/Feneric/doxypypy) filter, so no special
-comment syntax is needed.
+required for diagram generation. Doxygen parses standard Python docstrings
+directly, so no special comment syntax or extra dependencies are needed.
 
 Install the tools:
 
-- **Debian/Ubuntu:** `sudo apt-get install doxygen graphviz && pip install doxypypy`
-- **Windows:** download the installers from the [Doxygen](https://www.doxygen.nl/download.html) and [Graphviz](https://graphviz.org/download/) websites and run `pip install doxypypy` so `doxygen`, `dot`, and `doxypypy` are available in your `PATH`
+- **Debian/Ubuntu:** `sudo apt-get install doxygen graphviz`
+- **Windows:** download the installers from the [Doxygen](https://www.doxygen.nl/download.html) and [Graphviz](https://graphviz.org/download/) websites and ensure `doxygen` and `dot` are available in your `PATH`
 
 Then build the docs:
 
@@ -86,6 +85,7 @@ role definitions in [AGENTS.md](AGENTS.md). Key points:
 - Adhere to PEP-8 and include standard Python docstrings for new modules.
 - Update or add tests for any new functionality.
 - Ensure all tests pass before submitting a PR.
+- Avoid adding new dependencies unless absolutely necessary and discuss them in the PR.
 
 ## Directory Structure
 
