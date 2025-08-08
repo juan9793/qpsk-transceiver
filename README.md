@@ -50,10 +50,10 @@ python demos/qpsk_rrc_upsample_eye.py
 python demos/qpsk_ber_snr_sweep.py
 ```
 
-Run tests with `pytest`:
+Run tests with `pytest`, treating warnings as errors:
 
 ```bash
-python -m pytest tests
+python -W error -m pytest tests
 ```
 
 ## Documentation
@@ -84,7 +84,7 @@ role definitions in [AGENTS.md](AGENTS.md). Key points:
 
 - Adhere to PEP-8 and include standard Python docstrings for new modules.
 - Update or add tests for any new functionality.
-- Ensure all tests pass before submitting a PR.
+- Ensure all tests pass without warnings before submitting a PR.
 - Avoid adding new dependencies unless absolutely necessary and discuss them in the PR.
 
 ## Directory Structure

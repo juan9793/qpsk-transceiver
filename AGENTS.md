@@ -64,6 +64,7 @@ References to QAMpy refer to the submodule located at `/base/QAMpy`; do not atte
 - Unit tests check individual DSP blocks.
 - Integration tests validate complete TX → Channel → RX pipelines.
 - Simulation Agent includes visual inspection artifacts (plots) in PRs.
+- Run tests with `pytest`, treating warnings as errors; the suite must pass without warnings.
 
 ### Release
 - Release Agent bumps version, updates changelog, and publishes release.
@@ -77,7 +78,7 @@ References to QAMpy refer to the submodule located at `/base/QAMpy`; do not atte
 - Always use QAMpy functions if available.
 - Avoid glue code; it is never recommended.
 - Follow "Divide and conquer"—each function should implement a single, well-defined functionality with optional configuration.
-- Tests must pass before merge.
+- Tests must pass without warnings before merge.
 - Avoid adding new dependencies unless absolutely necessary; prefer using the existing requirements.
 
 ## Artifacts & Storage
