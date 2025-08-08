@@ -1,0 +1,3 @@
+[submodule "base/QAMpy"]
+	path = base/QAMpy
+	url = https://github.com/ChalmersPhotonicsLab/QAMpy
