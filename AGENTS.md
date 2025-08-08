@@ -100,6 +100,7 @@ All changes must go through Pull Requests.
 PRs require maintainer review.
 
 All AI-generated code must comply with PEP-8.
+Always use QAMpy functions if available.
 
 Avoid glue code; it is never recommended.
 Follow "Divide and conquer"—each function should implement a single, well-defined functionality, with optional configuration.
