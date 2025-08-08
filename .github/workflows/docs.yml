@@ -43,4 +43,5 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
       - name: Display Page URL
-        run: echo "Page URL: ${{ steps.deployment.outputs.page_url }}"
+        run: |
+          echo "Page URL: ${{ steps.deployment.outputs.page_url }}"
