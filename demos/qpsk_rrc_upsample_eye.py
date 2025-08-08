@@ -2,8 +2,8 @@
 
 Generate a single-polarization QPSK signal and upsample it using a
 root-raised cosine (RRC) filter to a user defined oversampling ratio.
-The constellation of the original symbols is displayed along with the
-eye diagram of the RRC filtered signal.
+The constellation of the original symbols is displayed and, in a
+separate figure, the eye diagram of the RRC filtered signal.
 
 Run this file directly with Python to display the plots:
 
@@ -74,18 +74,17 @@ def main(osr: float = 2.0, roll_off: float = 0.25) -> None:
 
     filtered = rrcos_resample(symbols, symbol_rate, symbol_rate * osr, beta=roll_off)
 
-    fig, axes = plt.subplots(1, 2, figsize=(12, 5))
+    fig_const, ax_const = plt.subplots(figsize=(6, 5))
+    ax_const.scatter(symbols.real, symbols.imag, s=1)
+    ax_const.set_title("Original QPSK Constellation")
+    ax_const.set_xlabel("In-phase")
+    ax_const.set_ylabel("Quadrature")
+    ax_const.grid(True)
+    ax_const.axis("equal")
 
-    axes[0].scatter(symbols.real, symbols.imag, s=1)
-    axes[0].set_title("Original QPSK Constellation")
-    axes[0].set_xlabel("In-phase")
-    axes[0].set_ylabel("Quadrature")
-    axes[0].grid(True)
-    axes[0].axis("equal")
+    fig_eye, ax_eye = plt.subplots(figsize=(6, 5))
+    plot_eye_diagram(filtered, int(osr), ax_eye)
 
-    plot_eye_diagram(filtered, int(osr), axes[1])
-
-    plt.tight_layout()
     plt.show()
 
 
