@@ -19,11 +19,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
       - name: Install Doxygen
         run: sudo apt-get update && sudo apt-get install -y doxygen graphviz
       - name: Build documentation
         working-directory: documentation
         run: doxygen Doxyfile
+      - name: Disable Jekyll processing
+        run: touch documentation/build/html/.nojekyll
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
