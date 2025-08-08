@@ -12,7 +12,7 @@ This document defines the roles, responsibilities, and workflows for human and A
 ### 2. DSP Development Agent
 - Implement and optimize DSP blocks (modulator, demodulator, RRC filters, Costas loop, equalizers).
 - Ensure code follows PEP-8.
-- Provide inline docstrings and usage examples.
+ - Provide inline docstrings and usage examples using standard Python docstring syntax.
 
 ### 3. Simulation Agent
 - Run channel simulations in Python or Jupyter notebooks.
@@ -25,10 +25,11 @@ This document defines the roles, responsibilities, and workflows for human and A
 - Automate regression testing.
 
 ### 5. Documentation Agent
-- Maintain the README, tutorials, and API references.
-- Keep the README's directory structure current whenever files or directories are added or removed.
-- Update usage instructions for VS Code terminal and Jupyter.
-- Generate diagrams for the signal chain and workflows.
+ - Maintain the README, tutorials, and API references.
+ - Keep the README's directory structure current whenever files or directories are added or removed.
+ - Update usage instructions for VS Code terminal and Jupyter.
+ - Generate diagrams for the signal chain and workflows.
+ - Ensure documentation uses standard Python docstrings; Doxygen parses docstrings to build the API reference.
 
 ### 6. Release Agent
 - Manage versioning and changelogs.
