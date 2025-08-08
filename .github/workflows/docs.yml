@@ -24,10 +24,10 @@ jobs:
       - name: Install Doxygen
         run: sudo apt-get update && sudo apt-get install -y doxygen graphviz
       - name: Build documentation
-        working-directory: documentation
-        run: doxygen Doxyfile
-      - name: Disable Jekyll processing
-        run: touch documentation/build/html/.nojekyll
+        run: |
+          cd documentation
+          doxygen Doxyfile
+          touch build/html/.nojekyll
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
