@@ -5,7 +5,7 @@ using the QAMpy submodule and plot the resulting constellation.
 
 Run this file directly with Python to display the plot:
 
-    python demo/qpsk_constellation.py
+    python demos/qpsk_constellation.py
 """
 
 import os
