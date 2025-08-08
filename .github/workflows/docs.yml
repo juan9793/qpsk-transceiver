@@ -20,9 +20,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Install Doxygen
-        run: sudo apt-get update && sudo apt-get install -y doxygen
+        run: sudo apt-get update && sudo apt-get install -y doxygen graphviz
       - name: Build documentation
-        run: doxygen documentation/Doxyfile
+        working-directory: documentation
+        run: doxygen Doxyfile
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
