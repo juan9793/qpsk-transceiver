@@ -100,6 +100,7 @@ role definitions in [AGENTS.md](AGENTS.md). Key points:
 │  ├─ Doxyfile
 │  └─ README.md
 ├─ helpers/
+├─ pytest.ini
 ├─ requirements.txt
 └─ tests/
 ```
@@ -109,6 +110,7 @@ role definitions in [AGENTS.md](AGENTS.md). Key points:
 - `demos/` – example scripts and notebooks.
 - `documentation/` – project documentation.
 - `helpers/` – utility functions shared across the project.
+- `pytest.ini` – Pytest configuration suppressing QAMpy deprecation warnings.
 - `requirements.txt` – project dependencies.
 - `tests/` – test suite.
 
