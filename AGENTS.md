@@ -110,9 +110,9 @@ Tests must pass before merge.
 The README's directory structure must be updated whenever files or directories are added or removed.
 
 Artifacts & Storage
-Performance plots: BER, constellation diagrams, equalizer learning curves, BPS phase plots.
+Performance plots (BER, constellation diagrams, equalizer learning curves, BPS phase plots) may be generated locally but must not be committed to the repository.
 
-Store generated artifacts in /reports or attach them to PRs.
+Attach any necessary artifacts to PRs instead of storing them in version control.
 
 Tools & Environment
 Python (version pinned in requirements.txt or environment.yml).
