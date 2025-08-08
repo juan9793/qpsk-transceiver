@@ -1,8 +1,8 @@
 """QPSK signal with AWGN noise demo.
 
 Generate a single-polarization QPSK signal at 64 GBd with 2**18 samples,
-add complex AWGN for a specified SNR value, and plot the constellations
-before and after noise injection.
+add complex AWGN at a specified SNR using QAMpy's ``change_snr``
+function, and plot the constellations before and after noise injection.
 
 Run this file directly with Python to display the plots:
 
@@ -13,7 +13,6 @@ import os
 import sys
 
 import matplotlib.pyplot as plt
-import numpy as np
 
 # Add QAMpy submodule to Python path
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -21,32 +20,8 @@ QAMPY_PATH = os.path.join(BASE_DIR, "base", "QAMpy")
 if QAMPY_PATH not in sys.path:
     sys.path.insert(0, QAMPY_PATH)
 
+from qampy.core.impairments import change_snr
 from qampy.signals import SignalQAMGrayCoded
-
-
-def add_awgn(signal: np.ndarray, snr_db: float) -> np.ndarray:
-    """Add complex AWGN to ``signal`` for a desired ``snr_db``.
-
-    Parameters
-    ----------
-    signal : np.ndarray
-        Input complex baseband signal.
-    snr_db : float
-        Desired signal-to-noise ratio in decibels.
-
-    Returns
-    -------
-    np.ndarray
-        Noisy signal with AWGN added.
-    """
-    signal_power = np.mean(np.abs(signal) ** 2)
-    snr_linear = 10 ** (snr_db / 10)
-    noise_power = signal_power / snr_linear
-    noise_std = np.sqrt(noise_power / 2)
-    noise = noise_std * (
-        np.random.randn(signal.size) + 1j * np.random.randn(signal.size)
-    )
-    return signal + noise
 
 
 def main() -> None:
@@ -57,7 +32,7 @@ def main() -> None:
 
     signal = SignalQAMGrayCoded(M=4, N=n_symbols, nmodes=1, fb=symbol_rate)
     constellation = signal[0]
-    noisy_constellation = add_awgn(constellation, snr_db)
+    noisy_constellation = change_snr(constellation, snr_db, symbol_rate, symbol_rate)
 
     fig, axes = plt.subplots(1, 2, figsize=(10, 5))
 
