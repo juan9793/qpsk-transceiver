@@ -98,6 +98,9 @@ PRs require maintainer review.
 
 All AI-generated code must comply with PEP-8.
 
+Avoid glue code; it is never recommended.
+Follow "Divide and conquer"—each function should implement a single, well-defined functionality, with optional configuration.
+
 Tests must pass before merge.
 
 The README's directory structure must be updated whenever files or directories are added or removed.
