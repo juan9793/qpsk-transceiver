@@ -11,7 +11,7 @@ chain.
 
 ### Prerequisites
 
-- Python 3.10 or newer
+- Python 3.11
 - [Git](https://git-scm.com/) with submodule support
 - `numpy`, `scipy`, and `matplotlib`
 
@@ -45,6 +45,7 @@ python demos/<demo_script>.py
 # Example
 python demos/qpsk_constellation.py
 python demos/qpsk_constellation_awgn.py
+python demos/qpsk_rrc_upsample_eye.py
 python demos/qpsk_ber_snr_sweep.py
 ```
 
