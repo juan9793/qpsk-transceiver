@@ -6,6 +6,7 @@ is included as a Git submodule and supplies the foundational DSP building
 blocks. This repository adds transceiver glue code, demos, tests, and documentation
 infrastructure that showcase how to construct a complete QPSK transmission
 chain.
+One of the goals of this project is to test code development workflows using agentic AI.
 
 ## Installation
 
