@@ -1,9 +1,9 @@
 """Upsample a QPSK signal with an RRC filter and plot the eye diagram.
 
-Generates a single-polarization QPSK signal, upsamples it with an RRC filter to
-a user-defined oversampling ratio, plots the original constellation, and shows
-the eye diagram of the filtered signal. Use ``main(osr, roll_off)`` to customize
-oversampling and roll-off.
+Generates a single-polarization QPSK signal, upsamples it with an RRC filter
+to a user-defined oversampling ratio, plots the original constellation, and
+shows the eye diagram of the filtered signal. Use ``main(osr, roll_off)`` to
+customize oversampling and roll-off.
 
 Run with ``python demos/qpsk_rrc_upsample_eye.py``.
 """
@@ -23,7 +23,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 QAMPY_PATH = os.path.join(BASE_DIR, "base", "QAMpy")
 if QAMPY_PATH not in sys.path:
     sys.path.insert(0, QAMPY_PATH)
-
 
 
 def validate_osr(osr: float) -> int:
@@ -69,7 +68,7 @@ def plot_eye_diagram(signal: np.ndarray, sps: int, ax: Any) -> None:
     ntraces = len(signal) // sps - 1
     for i in range(ntraces):
         start = i * sps
-        segment = signal[start : start + span]
+        segment = signal[start:start + span]
         ax.plot(segment.real, color="tab:blue", alpha=0.2)
     ax.set_title("Eye Diagram (In-phase)")
     ax.set_xlabel("Sample Index")
@@ -83,9 +82,9 @@ def main(osr: float = 2.0, roll_off: float = 0.25) -> None:
     Parameters
     ----------
     osr : float, optional
-        Oversampling ratio (must be a positive integer). Defaults to 2.
+        Oversampling ratio (must be a positive integer). Defaults to ``2``.
     roll_off : float, optional
-        RRC roll-off factor. Defaults to 0.25.
+        RRC roll-off factor. Defaults to ``0.25``.
     """
     from qampy.core.resample import rrcos_resample
     from qampy.signals import SignalQAMGrayCoded
@@ -97,7 +96,12 @@ def main(osr: float = 2.0, roll_off: float = 0.25) -> None:
     signal = SignalQAMGrayCoded(M=4, N=n_symbols, nmodes=1, fb=symbol_rate)
     symbols = signal[0]
 
-    filtered = rrcos_resample(symbols, symbol_rate, symbol_rate * sps, beta=roll_off)
+    filtered = rrcos_resample(
+        symbols,
+        symbol_rate,
+        symbol_rate * sps,
+        beta=roll_off,
+    )
 
     fig_const, ax_const = plt.subplots(figsize=(6, 5))
     ax_const.scatter(symbols.real, symbols.imag, s=1)
@@ -115,4 +119,3 @@ def main(osr: float = 2.0, roll_off: float = 0.25) -> None:
 
 if __name__ == "__main__":
     main()
-
