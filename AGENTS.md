@@ -56,12 +56,15 @@ Resolve conflicts and arbitrate design decisions.
 
 Repository Structure
 /base – Core DSP modules.
+/base/QAMpy – QAMpy submodule; do not install as external dependency.
 
 /demos – Example scripts and Jupyter notebooks.
 
 /tests – Test suite.
 
 /documentation – Project documentation.
+
+References to QAMpy refer to the submodule located at /base/QAMpy; do not attempt to install QAMpy as a standalone dependency.
 
 Workflows
 Development
