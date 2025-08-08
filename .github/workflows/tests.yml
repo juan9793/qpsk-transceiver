@@ -21,4 +21,4 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt -c constraints.txt
       - name: Run tests
-        run: python -m pytest tests
+        run: PYTHONPATH=base/QAMpy python -W error -m pytest tests
