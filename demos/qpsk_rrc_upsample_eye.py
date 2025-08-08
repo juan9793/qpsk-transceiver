@@ -1,16 +1,11 @@
-"""QPSK RRC filtering and eye-diagram demo.
+"""Upsample a QPSK signal with an RRC filter and plot the eye diagram.
 
-Generate a single-polarization QPSK signal and upsample it using a
-root-raised cosine (RRC) filter to a user defined oversampling ratio.
-The constellation of the original symbols is displayed and, in a
-separate figure, the eye diagram of the RRC filtered signal.
+Generates a single-polarization QPSK signal, upsamples it with an RRC filter to
+a user-defined oversampling ratio, plots the original constellation, and shows
+the eye diagram of the filtered signal. Use ``main(osr, roll_off)`` to customize
+oversampling and roll-off.
 
-Run this file directly with Python to display the plots:
-
-    python demos/qpsk_rrc_upsample_eye.py
-
-Use ``main(osr, roll_off)`` to customize the oversampling ratio and
-RRC roll-off.
+Run with ``python demos/qpsk_rrc_upsample_eye.py``.
 """
 
 from __future__ import annotations

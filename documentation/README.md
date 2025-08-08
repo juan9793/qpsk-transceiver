@@ -1,6 +1,8 @@
 # Documentation
 
-This directory contains configuration for building API documentation using [Doxygen](https://www.doxygen.nl/).
+This directory contains configuration for building API documentation using
+[Doxygen](https://www.doxygen.nl/). Doxygen parses standard Python docstrings
+directly, so modules and functions should include docstrings.
 
 ## Generating the docs
 
