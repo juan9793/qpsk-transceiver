@@ -17,9 +17,10 @@ QAMPY_PATH = os.path.join(BASE_DIR, "base", "QAMpy")
 if QAMPY_PATH not in sys.path:
     sys.path.insert(0, QAMPY_PATH)
 
-from qampy.signals import SignalQAMGrayCoded
+from qampy.signals import SignalQAMGrayCoded  # noqa: E402
 
 
+# Generate the signal and plot its constellation.
 def main() -> None:
     """Generate the signal and plot its constellation."""
     n_symbols = 2 ** 18

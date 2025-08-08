@@ -18,10 +18,11 @@ QAMPY_PATH = os.path.join(BASE_DIR, "base", "QAMpy")
 if QAMPY_PATH not in sys.path:
     sys.path.insert(0, QAMPY_PATH)
 
-from qampy.core.impairments import change_snr
-from qampy.signals import SignalQAMGrayCoded
+from qampy.core.impairments import change_snr  # noqa: E402
+from qampy.signals import SignalQAMGrayCoded  # noqa: E402
 
 
+# Generate the signal, add noise, and plot constellations.
 def main() -> None:
     """Generate the signal, add noise, and plot constellations."""
     n_symbols = 2 ** 18
@@ -30,7 +31,9 @@ def main() -> None:
 
     signal = SignalQAMGrayCoded(M=4, N=n_symbols, nmodes=1, fb=symbol_rate)
     constellation = signal[0]
-    noisy_constellation = change_snr(constellation, snr_db, symbol_rate, symbol_rate)
+    noisy_constellation = change_snr(
+        constellation, snr_db, symbol_rate, symbol_rate
+    )
 
     fig, axes = plt.subplots(1, 2, figsize=(10, 5))
 
@@ -42,7 +45,9 @@ def main() -> None:
     axes[0].axis("equal")
 
     axes[1].scatter(noisy_constellation.real, noisy_constellation.imag, s=1)
-    axes[1].set_title(f"QPSK with AWGN at {snr_db} dB")
+    axes[1].set_title(
+        f"QPSK with AWGN at {snr_db} dB"
+    )
     axes[1].set_xlabel("In-phase")
     axes[1].set_ylabel("Quadrature")
     axes[1].grid(True)

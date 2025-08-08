@@ -20,12 +20,13 @@ QAMPY_PATH = os.path.join(BASE_DIR, "base", "QAMpy")
 if QAMPY_PATH not in sys.path:
     sys.path.insert(0, QAMPY_PATH)
 
-from qampy.core.ber_functions import cal_ber_syncd
-from qampy.core.impairments import change_snr
-from qampy.signals import SignalQAMGrayCoded
-from qampy import theory
+from qampy.core.ber_functions import cal_ber_syncd  # noqa: E402
+from qampy.core.impairments import change_snr  # noqa: E402
+from qampy.signals import SignalQAMGrayCoded  # noqa: E402
+from qampy import theory  # noqa: E402
 
 
+# Sweep SNR, calculate BER, and generate a plot.
 def main() -> None:
     """Sweep SNR, calculate BER, and generate a plot."""
     n_symbols = 2 ** 18
