@@ -18,6 +18,7 @@ from __future__ import annotations
 import os
 import sys
 from typing import Any
+from numbers import Real
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -45,9 +46,13 @@ def validate_osr(osr: float) -> int:
 
     Raises
     ------
+    TypeError
+        If ``osr`` is not a real number.
     ValueError
         If ``osr`` is not a positive integer.
     """
+    if isinstance(osr, bool) or not isinstance(osr, Real):
+        raise TypeError("Oversampling ratio must be a real number")
     if osr <= 0 or not float(osr).is_integer():
         raise ValueError("Oversampling ratio must be a positive integer")
     return int(osr)
