@@ -28,8 +28,29 @@ QAMPY_PATH = os.path.join(BASE_DIR, "base", "QAMpy")
 if QAMPY_PATH not in sys.path:
     sys.path.insert(0, QAMPY_PATH)
 
-from qampy.core.resample import rrcos_resample
-from qampy.signals import SignalQAMGrayCoded
+
+
+def validate_osr(osr: float) -> int:
+    """Validate and convert the oversampling ratio to a positive integer.
+
+    Parameters
+    ----------
+    osr : float
+        Desired oversampling ratio.
+
+    Returns
+    -------
+    int
+        Oversampling ratio as an integer.
+
+    Raises
+    ------
+    ValueError
+        If ``osr`` is not a positive integer.
+    """
+    if osr <= 0 or not float(osr).is_integer():
+        raise ValueError("Oversampling ratio must be a positive integer")
+    return int(osr)
 
 
 def plot_eye_diagram(signal: np.ndarray, sps: int, ax: Any) -> None:
@@ -62,17 +83,21 @@ def main(osr: float = 2.0, roll_off: float = 0.25) -> None:
     Parameters
     ----------
     osr : float, optional
-        Oversampling ratio. Defaults to 2.0.
+        Oversampling ratio (must be a positive integer). Defaults to 2.
     roll_off : float, optional
         RRC roll-off factor. Defaults to 0.25.
     """
+    from qampy.core.resample import rrcos_resample
+    from qampy.signals import SignalQAMGrayCoded
+
+    sps = validate_osr(osr)
     n_symbols = 2 ** 14
     symbol_rate = 64e9  # 64 GBd
 
     signal = SignalQAMGrayCoded(M=4, N=n_symbols, nmodes=1, fb=symbol_rate)
     symbols = signal[0]
 
-    filtered = rrcos_resample(symbols, symbol_rate, symbol_rate * osr, beta=roll_off)
+    filtered = rrcos_resample(symbols, symbol_rate, symbol_rate * sps, beta=roll_off)
 
     fig_const, ax_const = plt.subplots(figsize=(6, 5))
     ax_const.scatter(symbols.real, symbols.imag, s=1)
@@ -83,7 +108,7 @@ def main(osr: float = 2.0, roll_off: float = 0.25) -> None:
     ax_const.axis("equal")
 
     fig_eye, ax_eye = plt.subplots(figsize=(6, 5))
-    plot_eye_diagram(filtered, int(osr), ax_eye)
+    plot_eye_diagram(filtered, sps, ax_eye)
 
     plt.show()
 
