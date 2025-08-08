@@ -37,6 +37,10 @@ Demo scripts can be executed directly with Python:
 
 ```bash
 python demos/<demo_script>.py
+
+# Example
+python demos/qpsk_constellation.py
+python demos/qpsk_constellation_awgn.py
 ```
 
 Run tests with `pytest`:
