@@ -1,0 +1,12 @@
+# Doxyfile for qpsk-transceiver
+# Documentation generation configuration
+
+PROJECT_NAME = "qpsk-transceiver"
+OUTPUT_DIRECTORY = build
+GENERATE_HTML = YES
+GENERATE_LATEX = NO
+INPUT = ../base ../demos ../tests
+FILE_PATTERNS = *.py
+RECURSIVE = YES
+EXTRACT_ALL = YES
+HAVE_DOT = YES
