@@ -1,9 +1,10 @@
-"""@file qpsk_ber_snr_sweep.py
-@brief Sweep SNR and plot BER for a QPSK signal.
-@details Generates a single-polarization 64 GBd QPSK signal, adds complex AWGN
-across 0–17 dB in 1 dB steps, demodulates, computes the bit error rate,
-and overlays the theoretical BER curve on the plot.
-Run with `python demos/qpsk_ber_snr_sweep.py`.
+"""Sweep SNR and plot BER for a QPSK signal.
+
+Generates a single-polarization 64 GBd QPSK signal, adds complex AWGN across
+0–17 dB in 1 dB steps, demodulates, computes the bit error rate, and overlays
+the theoretical BER curve on the plot.
+
+Run with ``python demos/qpsk_ber_snr_sweep.py``.
 """
 
 import os

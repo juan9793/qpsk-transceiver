@@ -59,7 +59,8 @@ python -m pytest tests
 ## Documentation
 
 Generate API documentation with [Doxygen](https://www.doxygen.nl/). Graphviz is
-required for diagram generation.
+required for diagram generation. Doxygen parses standard Python docstrings
+directly, so no special comment syntax or extra dependencies are needed.
 
 Install the tools:
 
@@ -81,9 +82,10 @@ generated documentation.
 Contributions are welcome through pull requests. Please follow the workflow and
 role definitions in [AGENTS.md](AGENTS.md). Key points:
 
-- Adhere to PEP-8 and include docstrings for new modules.
+- Adhere to PEP-8 and include standard Python docstrings for new modules.
 - Update or add tests for any new functionality.
 - Ensure all tests pass before submitting a PR.
+- Avoid adding new dependencies unless absolutely necessary and discuss them in the PR.
 
 ## Directory Structure
 

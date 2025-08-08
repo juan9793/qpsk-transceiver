@@ -1,9 +1,10 @@
-"""@file qpsk_constellation_awgn.py
-@brief Add AWGN to a QPSK signal and plot constellations.
-@details Generates a single-polarization QPSK signal at 64 GBd with 2**18 samples,
+"""Add AWGN to a QPSK signal and plot constellations.
+
+Generates a single-polarization QPSK signal at 64 GBd with ``2**18`` samples,
 applies complex AWGN at a specified SNR using QAMpy's ``change_snr`` function,
 and plots constellations before and after noise injection.
-Run with `python demos/qpsk_constellation_awgn.py`.
+
+Run with ``python demos/qpsk_constellation_awgn.py``.
 """
 
 import os
