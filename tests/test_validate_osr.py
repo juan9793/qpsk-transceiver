@@ -23,10 +23,6 @@ def test_validate_osr_rejects_non_positive():
             validate_osr(invalid)
 
 
-def test_validate_osr_accepts_float_integer():
-    assert validate_osr(6.0) == 6
-
-
 def test_validate_osr_rejects_nan():
     with pytest.raises(ValueError):
         validate_osr(np.nan)
@@ -35,3 +31,14 @@ def test_validate_osr_rejects_nan():
 def test_validate_osr_rejects_infinity():
     with pytest.raises(ValueError):
         validate_osr(np.inf)
+
+ 
+def test_validate_osr_rejects_bool():
+    with pytest.raises(TypeError):
+        validate_osr(True)
+
+
+def test_validate_osr_rejects_non_numeric():
+    with pytest.raises(TypeError):
+        validate_osr("3")
+

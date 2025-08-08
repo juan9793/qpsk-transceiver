@@ -22,12 +22,12 @@ git clone --recurse-submodules <repo_url>
 cd qpsk-transceiver
 python -m venv .venv
 source .venv/bin/activate
-pip install -r requirements.txt -c constrains.txt
+pip install -r requirements.txt -c constraints.txt
 ```
 
 The commands above create an isolated Python environment and install the
 packages required by the project using the pinned versions defined in
-`requirements.txt` and `constrains.txt`.
+`requirements.txt` and `constraints.txt`.
 
 If you cloned without `--recurse-submodules`, initialize the submodule using
 
@@ -71,7 +71,7 @@ role definitions in [AGENTS.md](AGENTS.md). Key points:
 ├─ AGENTS.md
 ├─ README.md
 ├─ base/
-├─ constrains.txt
+├─ constraints.txt
 ├─ demos/
 ├─ documentation/
 ├─ requirements.txt
@@ -79,7 +79,7 @@ role definitions in [AGENTS.md](AGENTS.md). Key points:
 ```
 
 - `base/` – core transceiver implementation (includes the `QAMpy` submodule).
-- `constrains.txt` – pinned versions for dependencies.
+- `constraints.txt` – pinned versions for dependencies.
 - `demos/` – example scripts and notebooks.
 - `documentation/` – project documentation.
 - `requirements.txt` – project dependencies.
