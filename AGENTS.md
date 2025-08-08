@@ -34,6 +34,8 @@ Automate regression testing.
 5. Documentation Agent
 Maintain the README, tutorials, and API references.
 
+Keep the README's directory structure current; update it whenever files or directories are added or removed.
+
 Update usage instructions for VS Code terminal and Jupyter.
 
 Generate diagrams for the signal chain and workflows.
@@ -57,9 +59,9 @@ Repository Structure
 
 /demos – Example scripts and Jupyter notebooks.
 
-/integration-tests – End-to-end validation scenarios.
+/tests – Test suite.
 
-/unit-tests – Component-level test cases.
+/documentation – Project documentation.
 
 Workflows
 Development
@@ -97,6 +99,8 @@ PRs require maintainer review.
 All AI-generated code must comply with PEP-8.
 
 Tests must pass before merge.
+
+The README's directory structure must be updated whenever files or directories are added or removed.
 
 Artifacts & Storage
 Performance plots: BER, constellation diagrams, equalizer learning curves, BPS phase plots.

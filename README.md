@@ -3,7 +3,7 @@
 QPSK (Quadrature Phase Shift Keying) transceiver simulation built on top of the
 [QAMpy](https://github.com/ChalmersPhotonicsLab/QAMpy) project. The QAMpy code
 is included as a Git submodule and supplies the foundational DSP building
-blocks. This repository adds transceiver glue code, demos, and testing
+blocks. This repository adds transceiver glue code, demos, tests, and documentation
 infrastructure that showcase how to construct a complete QPSK transmission
 chain.
 
@@ -39,11 +39,10 @@ Demo scripts can be executed directly with Python:
 python demos/<demo_script>.py
 ```
 
-Run unit tests and integration tests with `pytest`:
+Run tests with `pytest`:
 
 ```bash
-python -m pytest unit-tests
-python -m pytest integration-tests
+python -m pytest tests
 ```
 
 ## Contributing
@@ -57,8 +56,18 @@ role definitions in [AGENTS.md](AGENTS.md). Key points:
 
 ## Directory Structure
 
+```
+.
+├─ AGENTS.md
+├─ README.md
+├─ base/
+├─ demos/
+├─ tests/
+└─ documentation/
+```
+
 - `base/` – core transceiver implementation (includes the `QAMpy` submodule).
-- `unit-tests/` – unit tests.
-- `integration-tests/` – integration tests.
-- `demos/` – example usage.
+- `demos/` – example scripts and notebooks.
+- `tests/` – test suite.
+- `documentation/` – project documentation.
 
