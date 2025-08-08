@@ -55,6 +55,26 @@ Run tests with `pytest`:
 python -m pytest tests
 ```
 
+## Documentation
+
+Generate API documentation with [Doxygen](https://www.doxygen.nl/). Graphviz is
+required for diagram generation.
+
+Install the tools:
+
+- **Debian/Ubuntu:** `sudo apt-get install doxygen graphviz`
+- **Windows:** download the installers from the [Doxygen](https://www.doxygen.nl/download.html) and [Graphviz](https://graphviz.org/download/) websites and ensure `doxygen` and `dot` are available in your `PATH`
+
+Then build the docs:
+
+```bash
+cd documentation
+doxygen Doxyfile
+```
+
+Open `documentation/build/html/index.html` in a web browser to view the
+generated documentation.
+
 ## Contributing
 
 Contributions are welcome through pull requests. Please follow the workflow and
@@ -74,6 +94,8 @@ role definitions in [AGENTS.md](AGENTS.md). Key points:
 ├─ constraints.txt
 ├─ demos/
 ├─ documentation/
+│  ├─ Doxyfile
+│  └─ README.md
 ├─ requirements.txt
 └─ tests/
 ```
