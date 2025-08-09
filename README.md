@@ -116,6 +116,7 @@ role definitions in [AGENTS.md](AGENTS.md). Key points:
 ```
 .
 ├─ AGENTS.md
+├─ LICENSE
 ├─ README.md
 ├─ base/
 ├─ constraints.txt
@@ -139,4 +140,6 @@ role definitions in [AGENTS.md](AGENTS.md). Key points:
 - `requirements.txt` – project dependencies.
 - `tests/` – test suite.
 
+## License
 
+This project is released under an "All Rights Reserved" license. No copying, distribution, modification, or commercial use is permitted without explicit written permission from the copyright holder. See [LICENSE](LICENSE) for details.
