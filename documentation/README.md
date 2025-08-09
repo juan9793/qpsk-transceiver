@@ -17,3 +17,10 @@ directly, so modules and functions should include docstrings.
    ```
    The generated HTML will be placed under `documentation/build/html`. Open `index.html` in a browser to view the documentation.
 
+### GitHub Pages
+
+The documentation workflow deploys the contents of `documentation/build/html`
+to GitHub Pages. Ensure the repository's Pages **Source** is set to *GitHub
+Actions* so the default branch deployment does not overwrite the generated
+site.
+

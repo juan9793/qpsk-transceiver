@@ -75,7 +75,9 @@ doxygen Doxyfile
 ```
 
 Open `documentation/build/html/index.html` in a web browser to view the
-generated documentation.
+generated documentation. The docs workflow publishes to GitHub Pages; ensure the
+repository's Pages **Source** is set to *GitHub Actions* so default branch
+deployments do not overwrite the generated site.
 
 ## Contributing
 

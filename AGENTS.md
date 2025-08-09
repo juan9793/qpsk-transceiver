@@ -81,6 +81,7 @@ Never replace or vendor the QAMpy code; keep it as a Git submodule and update it
 - Follow "Divide and conquer"—each function should implement a single, well-defined functionality with optional configuration.
 - Tests must pass without warnings before merge.
 - Avoid adding new dependencies unless absolutely necessary; prefer using the existing requirements.
+- Do not include unvetted third-party themes or code (e.g., doxygen-awesome) without maintainer approval.
 
 ## Artifacts & Storage
 - Performance plots (BER, constellation diagrams, equalizer learning curves, BPS phase plots) may be generated locally but must not be committed to the repository.
