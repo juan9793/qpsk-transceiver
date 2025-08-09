@@ -4,10 +4,12 @@ digraph QPSK_Transceiver {
 
     src [label="Bit\nSource"];
     mod [label="QPSK\nModulator"];
-    tx_rrc [label="RRC\nUpsampler"];
+    up [label="Upsampler"];
+    tx_rrc [label="RRC\nFilter"];
     channel [label="AWGN\nChannel"];
     rx_rrc [label="RRC\nMatched Filter"];
+    down [label="Downsampler"];
     decision [label="Symbol\nDecision"];
 
-    src -> mod -> tx_rrc -> channel -> rx_rrc -> decision;
+    src -> mod -> up -> tx_rrc -> channel -> rx_rrc -> down -> decision;
 }
