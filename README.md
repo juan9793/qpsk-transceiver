@@ -40,7 +40,6 @@ git submodule update --init --recursive
 ```
 
 ## Running demos and tests
-
 Demo scripts can be executed directly with Python:
 
 ```bash
@@ -48,10 +47,16 @@ python demos/<demo_script>.py
 
 # Example
 python demos/qpsk_constellation.py
-python demos/qpsk_constellation_awgn.py
-python demos/qpsk_rrc_upsample_eye.py
-python demos/qpsk_ber_snr_sweep.py
 ```
+
+Available demos:
+
+| Script | Purpose |
+| --- | --- |
+| [qpsk_constellation.py](demos/qpsk_constellation.py) | Generate and plot a QPSK constellation. |
+| [qpsk_constellation_awgn.py](demos/qpsk_constellation_awgn.py) | Add AWGN to a QPSK signal and compare constellations. |
+| [qpsk_rrc_upsample_eye.py](demos/qpsk_rrc_upsample_eye.py) | Upsample with an RRC filter and display the eye diagram. |
+| [qpsk_ber_snr_sweep.py](demos/qpsk_ber_snr_sweep.py) | Sweep SNR and plot simulated vs. theoretical BER. |
 
 Run tests with `pytest`, treating warnings as errors:
 
