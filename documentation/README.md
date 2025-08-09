@@ -5,6 +5,16 @@ This directory contains configuration for building API documentation using
 directly, so modules and functions should include docstrings. Diagrams used
 throughout the documentation live under `diagrams/`.
 
+### Diagram conversion
+
+Use [Graphviz](https://graphviz.org/) to convert `.dot` files in `diagrams/` to `.svg` images:
+
+```bash
+dot -Tsvg qpsk_transmission_chain.dot -o qpsk_transmission_chain.svg
+```
+
+Regenerate diagrams whenever the underlying `.dot` files change or the signal chain is updated.
+
 ## Generating the docs
 
 1. Install Doxygen and Graphviz.
