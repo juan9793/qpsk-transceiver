@@ -22,7 +22,10 @@ One of the goals of this project is to test code development workflows using age
 git clone --recurse-submodules <repo_url>
 cd qpsk-transceiver
 python -m venv .venv
+# Activate the virtual environment (Unix/macOS)
 source .venv/bin/activate
+# Activate the virtual environment (Windows)
+.\.venv\Scripts\activate
 pip install -r requirements.txt -c constraints.txt
 ```
 
