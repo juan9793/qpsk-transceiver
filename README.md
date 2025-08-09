@@ -13,9 +13,11 @@ The transceiver passes through the following stages:
 
 - **Bit source** – generates the data to transmit.
 - **QPSK modulator** – maps bits to complex symbols ([`qpsk_constellation.py`](demos/qpsk_constellation.py)).
-- **RRC upsampler** – shapes and upsamples the signal ([`qpsk_rrc_upsample_eye.py`](demos/qpsk_rrc_upsample_eye.py)).
+- **Upsampler** – increases the sample rate ([`qpsk_rrc_upsample_eye.py`](demos/qpsk_rrc_upsample_eye.py)).
+- **RRC filter** – shapes the signal ([`qpsk_rrc_upsample_eye.py`](demos/qpsk_rrc_upsample_eye.py)).
 - **AWGN channel** – models additive noise ([`qpsk_constellation_awgn.py`](demos/qpsk_constellation_awgn.py), [`qpsk_ber_snr_sweep.py`](demos/qpsk_ber_snr_sweep.py)).
-- **RRC matched filter** – filters and downsamples at the receiver ([`qpsk_rrc_upsample_eye.py`](demos/qpsk_rrc_upsample_eye.py)).
+- **RRC matched filter** – filters the received signal ([`qpsk_rrc_upsample_eye.py`](demos/qpsk_rrc_upsample_eye.py)).
+- **Downsampler** – reduces the sample rate before symbol decisions.
 - **Symbol decision** – makes hard decisions and computes BER ([`qpsk_ber_snr_sweep.py`](demos/qpsk_ber_snr_sweep.py)).
 
 One of the goals of this project is to test code development workflows using agentic AI.
