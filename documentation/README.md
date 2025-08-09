@@ -5,7 +5,7 @@ This directory contains configuration for building API documentation using
 directly, so modules and functions should include docstrings. Diagrams used
 throughout the documentation live under `diagrams/`.
 
-\image html qpsk_transmission_chain.svg "QPSK transmission chain"
+![QPSK transmission chain](diagrams/qpsk_transmission_chain.svg)
 
 ### Diagram conversion
 
