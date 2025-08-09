@@ -81,6 +81,8 @@ python -W error -m pytest tests
 
 ## Documentation
 
+[Online Documentation](https://juan9793.github.io/qpsk-transceiver/)
+
 Generate API documentation with [Doxygen](https://www.doxygen.nl/). Graphviz is
 required for diagram generation. Doxygen parses standard Python docstrings
 directly, so no special comment syntax or extra dependencies are needed.
@@ -117,6 +119,7 @@ role definitions in [AGENTS.md](AGENTS.md). Key points:
 ```
 .
 ├─ AGENTS.md
+├─ LICENSE
 ├─ README.md
 ├─ base/
 ├─ constraints.txt
@@ -140,4 +143,6 @@ role definitions in [AGENTS.md](AGENTS.md). Key points:
 - `requirements.txt` – project dependencies.
 - `tests/` – test suite.
 
+## License
 
+This project is released under an "All Rights Reserved" license. No copying, distribution, modification, or commercial use is permitted without explicit written permission from the copyright holder. See [LICENSE](LICENSE) for details.
