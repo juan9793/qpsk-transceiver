@@ -1,5 +1,5 @@
 # Demos
 
-\image html qpsk_transmission_chain.svg "QPSK transmission chain"
+![QPSK transmission chain](../documentation/diagrams/qpsk_transmission_chain.svg)
 
 This directory contains example scripts demonstrating various stages of the QPSK transceiver.

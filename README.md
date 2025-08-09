@@ -8,7 +8,7 @@ infrastructure that showcase how to construct a complete QPSK transmission
 chain.
 
 
-\image html qpsk_transmission_chain.svg "QPSK transmission chain"
+![QPSK transmission chain](documentation/diagrams/qpsk_transmission_chain.svg)
 
 The transceiver passes through the following stages:
 
