@@ -2,6 +2,8 @@
 # Documentation generation configuration
 
 PROJECT_NAME = "qpsk-transceiver"
+PROJECT_BRIEF = "QPSK transceiver simulation"
+PROJECT_LOGO = ../documentation/diagrams/logo.svg
 OUTPUT_DIRECTORY = build
 GENERATE_HTML = YES
 GENERATE_LATEX = NO
