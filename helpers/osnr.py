@@ -1,10 +1,16 @@
-"""OSNR and SNR conversion utilities."""
+"""OSNR and SNR conversion utilities.
+
+Attributes
+----------
+REFERENCE_BW_HZ : float
+    0.1 nm reference bandwidth in Hz.
+"""
 
 from __future__ import annotations
 
 import numpy as np
 
-REFERENCE_BW_HZ = 12.5e9  # 0.1 nm reference bandwidth
+REFERENCE_BW_HZ = 12.5e9
 
 
 def osnr_to_snr(osnr_db: float, symbol_rate: float, npol: int) -> float:
