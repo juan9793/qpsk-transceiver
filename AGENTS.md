@@ -49,6 +49,7 @@ This document defines the roles, responsibilities, and workflows for human and A
 - `/documentation` – Project documentation.
 
 References to QAMpy refer to the submodule located at `/base/QAMpy`; do not attempt to install QAMpy as a standalone dependency.
+Never replace or vendor the QAMpy code; keep it as a Git submodule and update it via standard submodule workflows.
 
 ## Workflows
 
