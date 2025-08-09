@@ -2,7 +2,8 @@
 
 This directory contains configuration for building API documentation using
 [Doxygen](https://www.doxygen.nl/). Doxygen parses standard Python docstrings
-directly, so modules and functions should include docstrings.
+directly, so modules and functions should include docstrings. Diagrams used
+throughout the documentation live under `diagrams/`.
 
 ## Generating the docs
 

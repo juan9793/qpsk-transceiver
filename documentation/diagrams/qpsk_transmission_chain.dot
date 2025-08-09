@@ -1,0 +1,13 @@
+digraph QPSK_Transceiver {
+    rankdir=LR;
+    node [shape=box, style=rounded];
+
+    src [label="Bit\nSource"];
+    mod [label="QPSK\nModulator"];
+    tx_rrc [label="RRC\nUpsampler"];
+    channel [label="AWGN\nChannel"];
+    rx_rrc [label="RRC\nMatched Filter"];
+    decision [label="Symbol\nDecision"];
+
+    src -> mod -> tx_rrc -> channel -> rx_rrc -> decision;
+}

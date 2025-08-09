@@ -6,6 +6,18 @@ is included as a Git submodule and supplies the foundational DSP building
 blocks. This repository adds transceiver glue code, demos, tests, and documentation
 infrastructure that showcase how to construct a complete QPSK transmission
 chain.
+
+![QPSK transmission chain](documentation/diagrams/qpsk_transmission_chain.svg)
+
+The transceiver passes through the following stages:
+
+- **Bit source** – generates the data to transmit.
+- **QPSK modulator** – maps bits to complex symbols ([`qpsk_constellation.py`](demos/qpsk_constellation.py)).
+- **RRC upsampler** – shapes and upsamples the signal ([`qpsk_rrc_upsample_eye.py`](demos/qpsk_rrc_upsample_eye.py)).
+- **AWGN channel** – models additive noise ([`qpsk_constellation_awgn.py`](demos/qpsk_constellation_awgn.py), [`qpsk_ber_snr_sweep.py`](demos/qpsk_ber_snr_sweep.py)).
+- **RRC matched filter** – filters and downsamples at the receiver ([`qpsk_rrc_upsample_eye.py`](demos/qpsk_rrc_upsample_eye.py)).
+- **Symbol decision** – makes hard decisions and computes BER ([`qpsk_ber_snr_sweep.py`](demos/qpsk_ber_snr_sweep.py)).
+
 One of the goals of this project is to test code development workflows using agentic AI.
 
 ## Installation
@@ -108,7 +120,8 @@ role definitions in [AGENTS.md](AGENTS.md). Key points:
 ├─ demos/
 ├─ documentation/
 │  ├─ Doxyfile
-│  └─ README.md
+│  ├─ README.md
+│  └─ diagrams/
 ├─ helpers/
 ├─ pytest.ini
 ├─ requirements.txt
@@ -118,7 +131,7 @@ role definitions in [AGENTS.md](AGENTS.md). Key points:
 - `base/` – core transceiver implementation (includes the `QAMpy` submodule).
 - `constraints.txt` – pinned versions for dependencies.
 - `demos/` – example scripts and notebooks.
-- `documentation/` – project documentation.
+- `documentation/` – project documentation and diagrams.
 - `helpers/` – utility functions shared across the project.
 - `pytest.ini` – Pytest configuration suppressing QAMpy deprecation warnings.
 - `requirements.txt` – project dependencies.
