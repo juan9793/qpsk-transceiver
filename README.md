@@ -7,7 +7,8 @@ blocks. This repository adds transceiver glue code, demos, tests, and documentat
 infrastructure that showcase how to construct a complete QPSK transmission
 chain.
 
-![QPSK transmission chain](documentation/diagrams/qpsk_transmission_chain.svg)
+
+\image html qpsk_transmission_chain.svg "QPSK transmission chain"
 
 The transceiver passes through the following stages:
 

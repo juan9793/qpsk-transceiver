@@ -1,10 +1,12 @@
-"""End-to-end dual-polarization QPSK link over an optical AWGN channel.
+r"""End-to-end dual-polarization QPSK link over an optical AWGN channel.
 
 This test verifies a dual-polarization QPSK transmission using root-raised
 cosine pulse shaping with a roll-off of 0.1 and an oversampling ratio of two
 samples per symbol. The optical channel is modeled as additive white Gaussian
 noise (AWGN) with a specified OSNR. The receiver employs only a matched RRC
 filter without further equalization.
+
+\image html qpsk_transmission_chain.svg "QPSK transmission chain"
 """
 
 import sys
